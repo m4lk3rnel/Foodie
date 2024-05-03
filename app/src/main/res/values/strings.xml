@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Foodie</string>
+    <string name="password_contentDescription">Password text field</string>
+    <string name="username_placeholder">Username</string>
+    <string name="register_button_text">Register</string>
+    <string name="usernameTextView">Username:</string>
+    <string name="passwordTextView">Password:</string>
 </resources>

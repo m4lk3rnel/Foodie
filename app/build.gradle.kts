@@ -5,7 +5,7 @@ plugins {
 android {
     namespace = "com.example.foodie"
     compileSdk = 34
-
+    android.buildFeatures.buildConfig = true
     defaultConfig {
         applicationId = "com.example.foodie"
         minSdk = 24
@@ -17,7 +17,12 @@ android {
     }
 
     buildTypes {
+        debug{
+            buildConfigField("String", "BASE_URL", project.properties["BASE_URL"].toString())
+        }
         release {
+            buildConfigField("String", "BASE_URL", project.properties["BASE_URL"].toString())
+
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -32,7 +37,7 @@ android {
 }
 
 dependencies {
-
+    implementation("com.android.volley:volley:1.2.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
