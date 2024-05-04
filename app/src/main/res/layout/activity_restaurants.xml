@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/testTextView"
-        android:layout_width="322dp"
-        android:layout_height="71dp"
+        android:layout_width="365dp"
+        android:layout_height="54dp"
         android:text="Restaurants activity"
         android:textAlignment="center"
         android:textSize="34sp"
@@ -23,7 +23,7 @@
 
     <TextView
         android:id="@+id/welcomeText"
-        android:layout_width="323dp"
+        android:layout_width="302dp"
         android:layout_height="42dp"
         android:text="Welcome, [name]"
         android:textSize="24sp"
@@ -31,5 +31,6 @@
         app:layout_constraintBottom_toTopOf="@+id/testTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.553" />
 </androidx.constraintlayout.widget.ConstraintLayout>

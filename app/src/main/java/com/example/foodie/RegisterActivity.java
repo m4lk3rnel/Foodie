@@ -4,15 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.JsonReader;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -40,20 +46,52 @@ public class RegisterActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(this);
         //String url = "http://10.0.2.2/foodie/add.php";
         String url = BuildConfig.BASE_URL + "/foodie/Register.php";
-
+        System.out.println("test");
+        Log.i("Register", "test");
+        Log.i("main", "test");
         btn.setOnClickListener(v -> {
 
             final String name = String.valueOf(usernameText.getText());
             final String password = String.valueOf(passwordText.getText());
             // Request a string response from the provided URL.
+            Log.d("Register", String.format("Username: %s\nPassword: %s", name, password));
             StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                     response -> {
                         // Handle response
 
-                        Log.d("Main Activity", response);
+                        Log.d("Register", "Response: " + response);
+                        System.out.println("Response: " + response);
+                        try {
+                            JSONObject json = new JSONObject(response);
+                            String responseValue = json.getString("response");
+                            switch(responseValue)
+                            {
+                                case "Success": {
+                                    Intent i = new Intent(v.getContext(), RestaurantsActivity.class);
+                                    i.putExtra("username", name);
+                                    startActivity(i);
+                                    Log.d("Register", "Success");
+                                    break;
+                                }
+                                case "Exists": {
+                                    Log.d("Register", "Already exists");
+                                    Toast.makeText(v.getContext(), "Username already exists!", Toast.LENGTH_SHORT).show();
+
+                                    break;
+                                }
+                                default: {
+                                    Toast.makeText(v.getContext(), "An error occurred.", Toast.LENGTH_SHORT).show();
+
+                                    break;
+                                }
+                            }
+
+                        } catch (Exception e) {
+                            Log.e("Register", String.format("%s: %s", e, e.getMessage()));
+                        }
                     }, error -> {
                 // Handle errors
-                Log.e("Main Activity", error.toString());
+                Log.e("Register", String.format("%s: %s", error, error.getMessage()));
             }) {
                 @Override
                 protected Map<String, String> getParams() {
@@ -64,19 +102,18 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             };
             queue.add(stringRequest);
+
             System.out.println("Name: " + name);
             System.out.println("Password: " + password);
             System.out.println("url" + url);
 
-            Intent i = new Intent(v.getContext(), RestaurantsActivity.class);
-            i.putExtra("username", name);
-            startActivity(i);
+
 
         });
         alreadyAccText.setOnClickListener(v -> {
             Intent i = new Intent(v.getContext(), LoginActivity.class);
             startActivity(i);
-            Log.d("Register Activity", "Text view clicked");
+            Log.d("Register", "Text view clicked");
         });
     }
 }
