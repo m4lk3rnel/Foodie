@@ -6,6 +6,11 @@
     <string name="usernameTextView">Username:</string>
     <string name="passwordTextView">Password:</string>
     <string name="create_a_new_account">Create a new account</string>
+    <string name="login">Login</string>
     <string name="foodie_main_image">foodie main image</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="no_account">Create an account</string>
+
+
     <string name="foodie">Foodie</string>
 </resources>

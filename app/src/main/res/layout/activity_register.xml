@@ -20,7 +20,7 @@
         android:contentDescription="@string/foodie_main_image" />
 
     <TextView
-        android:id="@+id/newAccountLabel"
+        android:id="@+id/loginLabel"
         android:layout_width="225dp"
         android:layout_height="46dp"
         android:fontFamily="sans-serif-condensed-medium"
@@ -123,12 +123,32 @@
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/newAccountLabel"
+        app:layout_constraintBottom_toTopOf="@+id/loginLabel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.41" />
+
+    <TextView
+        android:id="@+id/alreadyAccText"
+        android:layout_width="313dp"
+        android:layout_height="36dp"
+        android:clickable="true"
+        android:elegantTextHeight="true"
+        android:focusable="true"
+        android:text="@string/already_have_an_account"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textColorLink="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sendButton"
+        app:layout_constraintVertical_bias="0.151" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
