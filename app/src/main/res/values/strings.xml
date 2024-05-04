@@ -5,4 +5,7 @@
     <string name="register_button_text">Register</string>
     <string name="usernameTextView">Username:</string>
     <string name="passwordTextView">Password:</string>
+    <string name="create_a_new_account">Create a new account</string>
+    <string name="foodie_main_image">foodie main image</string>
+    <string name="foodie">Foodie</string>
 </resources>
