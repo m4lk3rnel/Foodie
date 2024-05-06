@@ -24,9 +24,15 @@ public class R_RecyclerViewAdapter extends RecyclerView.Adapter<R_RecyclerViewAd
 
     public R_RecyclerViewAdapter(Context context, ArrayList<RestaurantModel> restaurantModels) {
         this.context = context;
+
         this.restaurantModels = restaurantModels;
+
     }
 
+    public void setRestaurantModels(ArrayList<RestaurantModel> restaurantModels) {
+        this.restaurantModels = restaurantModels;
+        notifyDataSetChanged();
+    }
     //onCreateViewHolder -> for giving the layout 'restaurants_recycler_view_row' to each row
     @NonNull
     @Override

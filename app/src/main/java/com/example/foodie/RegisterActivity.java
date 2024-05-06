@@ -2,12 +2,14 @@ package com.example.foodie;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.JsonReader;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +34,9 @@ public class RegisterActivity extends AppCompatActivity {
     EditText passwordText;
 
     TextView alreadyAccText;
+
+    SearchView searchView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,5 +120,6 @@ public class RegisterActivity extends AppCompatActivity {
             startActivity(i);
             Log.d("Register", "Text view clicked");
         });
+
     }
 }
