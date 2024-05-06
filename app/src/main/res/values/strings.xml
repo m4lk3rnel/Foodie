@@ -13,4 +13,65 @@
 
 
     <string name="foodie">Foodie</string>
+    <string name="welcome_name">Welcome, [name]</string>
+    <string name="restaurant_name">Restaurant name</string>
+    <string name="description">Description</string>
+
+    <string-array name="restaurants">
+        <item>Sunshine Diner</item>
+        <item>Comfort Food</item>
+        <item>The Dinner Table</item>
+        <item>Little Italy</item>
+        <item>Burrito Belly</item>
+        <item>Delicioso</item>
+        <item>Atomic Sushi</item>
+        <item>Cool Tofu</item>
+        <item>Little Italy</item>
+        <item>Burrito Belly</item>
+        <item>Delicioso</item>
+        <item>Atomic Sushi</item>
+        <item>Cool Tofu</item>
+        <item>Little Italy</item>
+        <item>Burrito Belly</item>
+        <item>Delicioso</item>
+        <item>Atomic Sushi</item>
+        <item>Cool Tofu</item>
+    </string-array>
+
+    <string-array name="descriptions">
+        <item>yummy food</item>
+        <item>yummy food</item>
+        <item>yummy food</item>
+        <item>yummy food</item>
+        <item>yummy food</item>
+        <item>yummy food</item>
+        <item>yummy food</item>
+        <item>yummy food</item>
+        <item>yummy food</item>
+        <item>yummy food</item>
+        <item>yummy food</item>
+        <item>yummy food</item>
+        <item>yummy food</item>
+        <item>yummy food</item>
+        <item>yummy food</item>
+        <item>yummy food</item>
+        <item>yummy food</item>
+        <item>yummy food</item>
+    </string-array>
+
+    <string-array name="foods">
+        <item>pizza</item>
+        <item>sushi</item>
+        <item>spaghetti</item>
+        <item>burger</item>
+        <item>yummy</item>
+    </string-array>
+
+    <string-array name="prices">
+        <item>20.99$</item>
+        <item>30.99$</item>
+        <item>17.99$</item>
+        <item>13.99$</item>
+        <item>20.99$</item>
+    </string-array>
 </resources>

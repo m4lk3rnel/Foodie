@@ -23,7 +23,7 @@
         android:id="@+id/loginLabel"
         android:layout_width="225dp"
         android:layout_height="46dp"
-        android:fontFamily="sans-serif-condensed-medium"
+        android:fontFamily="@font/roboto_light"
         android:text="@string/create_a_new_account"
         android:textAlignment="textStart"
         android:textColor="@color/white"
@@ -56,10 +56,11 @@
         android:layout_width="86dp"
         android:layout_height="27dp"
         android:layout_marginBottom="4dp"
+        android:fontFamily="@font/roboto_light"
         android:labelFor="@+id/usernameText"
         android:text="@string/usernameTextView"
-        android:textColor="@color/white"
 
+        android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/usernameText"
@@ -68,12 +69,13 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:textColor="@color/white"
-
         android:id="@+id/sendButton"
+
         android:layout_width="147dp"
         android:layout_height="57dp"
+        android:fontFamily="@font/roboto_light"
         android:text="@string/register_button_text"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -86,8 +88,9 @@
         android:layout_width="86dp"
         android:layout_height="27dp"
         android:layout_marginBottom="4dp"
-        android:labelFor="@+id/passwordText"
+        android:fontFamily="@font/roboto_light"
 
+        android:labelFor="@+id/passwordText"
         android:text="@string/passwordTextView"
         android:textColor="@color/white"
         android:textSize="16sp"
@@ -118,7 +121,7 @@
         android:layout_width="154dp"
 
         android:layout_height="61dp"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="@font/roboto_bold"
         android:text="@string/foodie"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -137,13 +140,13 @@
         android:clickable="true"
         android:elegantTextHeight="true"
         android:focusable="true"
+        android:fontFamily="@font/roboto_medium"
         android:text="@string/already_have_an_account"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textColorLink="#000000"
         android:textSize="24sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
