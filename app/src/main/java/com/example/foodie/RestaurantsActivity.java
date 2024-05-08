@@ -1,5 +1,7 @@
 package com.example.foodie;
 
+import static com.example.foodie.RestaurantImages.restaurantImages;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -22,16 +24,11 @@ public class RestaurantsActivity extends AppCompatActivity {
     RecyclerView restRecyclerView;
 
     public R_RecyclerViewAdapter recViewAdapter;
-    int[] restaurantImages = {R.drawable.restaurant1, R.drawable.restaurant2, R.drawable.restaurant3,
-            R.drawable.restaurant1, R.drawable.restaurant2, R.drawable.restaurant3,
-            R.drawable.restaurant1, R.drawable.restaurant2, R.drawable.restaurant3,
-            R.drawable.restaurant1, R.drawable.restaurant2, R.drawable.restaurant3,
-            R.drawable.restaurant1, R.drawable.restaurant2, R.drawable.restaurant3,
-            R.drawable.restaurant1, R.drawable.restaurant2, R.drawable.restaurant3,
-            R.drawable.restaurant1, R.drawable.restaurant2, R.drawable.restaurant3};
+
     ListView restListView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurants);
 
@@ -67,8 +64,8 @@ public class RestaurantsActivity extends AppCompatActivity {
         });
     }
     private void setUpRestaurantModels() {
-        String[] restaurantNames = getResources().getStringArray(R.array.restaurants);
-        String[] descriptions = getResources().getStringArray(R.array.descriptions);
+        String[] restaurantNames = getResources().getStringArray(R.array.restaurants_names);
+        String[] descriptions = getResources().getStringArray(R.array.restaurants_descriptions);
 
         for(int i = 0; i < restaurantNames.length; i++ ) {
             restaurantModels.add(new RestaurantModel(restaurantNames[i], descriptions[i], restaurantImages[i]));

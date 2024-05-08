@@ -1,15 +1,24 @@
 package com.example.foodie;
 
+import static android.widget.Toast.LENGTH_SHORT;
+
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.content.Context;
+import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.squareup.picasso.Picasso;
 
@@ -40,6 +49,25 @@ public class R_RecyclerViewAdapter extends RecyclerView.Adapter<R_RecyclerViewAd
         Log.d("RecyclerAdapter", "OnCreateViewHolder");
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.restaurants_recycler_view_row, parent, false);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView restaurantNameTextView = view.findViewById(R.id.restaurantNameTextView);
+                TextView descriptionTextView = view.findViewById(R.id.restaurantDescriptionTextView);
+                ImageView imageView = view.findViewById(R.id.restaurantImageView);
+                //Toast.makeText(context, String.format("Restaurant name: %s", restaurantNameTextView.getText()), LENGTH_SHORT).show();
+
+                Intent i = new Intent(v.getContext(), RestaurantActivity.class);
+                i.putExtra("name", restaurantNameTextView.getText());
+                i.putExtra("description", descriptionTextView.getText());
+
+                RecyclerView myView = (RecyclerView) v.getParent();
+                int position = myView.getChildAdapterPosition(v);
+                i.putExtra("restaurant_image_id", position);
+                Log.d("Adapter", String.format("id of restaurant row: %d", position));
+                v.getContext().startActivity(i);
+            }
+        });
         return new R_RecyclerViewAdapter.MyViewHolder(view);
     }
 

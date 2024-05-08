@@ -16,8 +16,10 @@
     <string name="welcome_name">Welcome, [name]</string>
     <string name="restaurant_name">Restaurant name</string>
     <string name="description">Description</string>
+    <string name="restaurant_activity_name">Restaurant name</string>
+    <string name="restaurant_activity_description">Restaurant description</string>
 
-    <string-array name="restaurants">
+    <string-array name="restaurants_names">
         <item>Sunshine Diner</item>
         <item>Comfort Food</item>
         <item>The Dinner Table</item>
@@ -38,36 +40,44 @@
         <item>Cool Tofu</item>
     </string-array>
 
-    <string-array name="descriptions">
-        <item>yummy food</item>
-        <item>yummy food</item>
-        <item>yummy food</item>
-        <item>yummy food</item>
-        <item>yummy food</item>
-        <item>yummy food</item>
-        <item>yummy food</item>
-        <item>yummy food</item>
-        <item>yummy food</item>
-        <item>yummy food</item>
-        <item>yummy food</item>
-        <item>yummy food</item>
-        <item>yummy food</item>
-        <item>yummy food</item>
-        <item>yummy food</item>
-        <item>yummy food</item>
-        <item>yummy food</item>
-        <item>yummy food</item>
+    <string-array name="restaurants_descriptions">
+        <item>nice restaurants</item>
+        <item>nice restaurants</item>
+        <item>nice restaurants</item>
+        <item>nice restaurants</item>
+        <item>nice restaurants</item>
+        <item>nice restaurants</item>
+        <item>nice restaurants</item>
+        <item>nice restaurants</item>
+        <item>nice restaurants</item>
+        <item>nice restaurants</item>
+        <item>nice restaurants</item>
+        <item>nice restaurants</item>
+        <item>nice restaurants</item>
+        <item>nice restaurants</item>
+        <item>nice restaurants</item>
+        <item>nice restaurants</item>
+        <item>nice restaurants</item>
+        <item>nice restaurants</item>
     </string-array>
 
-    <string-array name="foods">
+    <string-array name="foods_names">
         <item>pizza</item>
         <item>sushi</item>
         <item>spaghetti</item>
         <item>burger</item>
-        <item>yummy</item>
+        <item>some nice food</item>
     </string-array>
 
-    <string-array name="prices">
+    <string-array name="foods_descriptions">
+        <item>yummy food</item>
+        <item>yummy food</item>
+        <item>yummy food</item>
+        <item>yummy food</item>
+        <item>yummy food</item>
+    </string-array>
+
+    <string-array name="prices_names">
         <item>20.99$</item>
         <item>30.99$</item>
         <item>17.99$</item>
