@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -25,7 +24,6 @@ public class RestaurantsActivity extends AppCompatActivity {
 
     public R_RecyclerViewAdapter recViewAdapter;
 
-    ListView restListView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
