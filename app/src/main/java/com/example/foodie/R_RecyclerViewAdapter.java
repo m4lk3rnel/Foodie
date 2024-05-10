@@ -43,7 +43,7 @@ public class R_RecyclerViewAdapter extends RecyclerView.Adapter<R_RecyclerViewAd
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView restaurantNameTextView = view.findViewById(R.id.foodNameTextView);
+                TextView restaurantNameTextView = view.findViewById(R.id.restaurantNameTextView);
                 TextView descriptionTextView = view.findViewById(R.id.restaurantDescriptionTextView);
                 //Toast.makeText(context, String.format("Restaurant name: %s", restaurantNameTextView.getText()), LENGTH_SHORT).show();
 
@@ -94,7 +94,7 @@ public class R_RecyclerViewAdapter extends RecyclerView.Adapter<R_RecyclerViewAd
             super(itemView);
 
             restaurantImage = itemView.findViewById(R.id.restaurantImageView);
-            restaurantName = itemView.findViewById(R.id.foodNameTextView);
+            restaurantName = itemView.findViewById(R.id.restaurantNameTextView);
             restaurantDescription = itemView.findViewById(R.id.restaurantDescriptionTextView);
 
 

@@ -66,7 +66,7 @@
         <item>sushi</item>
         <item>spaghetti</item>
         <item>burger</item>
-        <item>some nice food</item>
+        <item>pasta</item>
     </string-array>
 
     <string-array name="foods_descriptions">

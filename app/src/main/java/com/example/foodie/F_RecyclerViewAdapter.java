@@ -27,15 +27,10 @@ public class F_RecyclerViewAdapter extends RecyclerView.Adapter<F_RecyclerViewAd
     @NonNull
     @Override
     public F_RecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = new LayoutInflater(context) {
-            @Override
-            public LayoutInflater cloneInContext(Context newContext) {
-                return null;
-            }
-        };
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.foods_recycler_view_row, parent, false);
 
-        inflater.inflate(R.layout.foods_recycler_view_row, parent);
-        return null;
+        return new F_RecyclerViewAdapter.MyViewHolder(view);
     }
 
     @Override

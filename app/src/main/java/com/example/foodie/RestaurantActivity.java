@@ -5,9 +5,11 @@ import static com.example.foodie.RestaurantImages.restaurantImages;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -25,7 +27,7 @@ public class RestaurantActivity extends AppCompatActivity {
 
     RecyclerView foodsRecyclerView;
 
-    ArrayList<FoodModel> foodModelsList;
+    ArrayList<FoodModel> foodModelsList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +53,7 @@ public class RestaurantActivity extends AppCompatActivity {
         initFoodModelsList();
 
         foodsRecyclerView.setAdapter(new F_RecyclerViewAdapter(this, foodModelsList));
+        foodsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
     public void initFoodModelsList() {
@@ -58,7 +61,11 @@ public class RestaurantActivity extends AppCompatActivity {
         String[] foodDescriptions = getResources().getStringArray(R.array.foods_descriptions);
 
         for(int i = 0; i < foodNames.length; i++ ) {
-            foodModelsList.add(new FoodModel(foodNames[i], foodDescriptions[i], foodImages[i]));
+            try {
+                foodModelsList.add(new FoodModel(foodNames[i], foodDescriptions[i], foodImages[i]));
+            } catch(Exception e) {
+                Log.e("Restaurant", e.getMessage());
+            }
         }
     }
 }
