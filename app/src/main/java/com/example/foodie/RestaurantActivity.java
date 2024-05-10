@@ -1,14 +1,20 @@
 package com.example.foodie;
 
-import androidx.appcompat.app.AppCompatActivity;
+import static com.example.foodie.FoodImages.foodImages;
+import static com.example.foodie.RestaurantImages.restaurantImages;
 
-import android.content.Intent;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.os.Bundle;
-import android.util.Log;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
 
 public class RestaurantActivity extends AppCompatActivity {
 
@@ -17,25 +23,42 @@ public class RestaurantActivity extends AppCompatActivity {
 
     ImageView restaurantImage;
 
+    RecyclerView foodsRecyclerView;
+
+    ArrayList<FoodModel> foodModelsList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant);
 
         //trying to manipulate views BEFORE setting the content view of the activity WILL NOT WORK
-        Log.d("Restaurant", "onCreate");
+
         String restaurantName = getIntent().getStringExtra("name");
         String restaurantDescription = getIntent().getStringExtra("description");
         int restaurantImagePosition = getIntent().getIntExtra("restaurant_image_id", 0);
 
-        Log.d("Restaurant", String.format("name: %s, description: %s", restaurantName, restaurantDescription));
+
         nameTextView = findViewById(R.id.nameTextView);
         descriptionTextView = findViewById(R.id.descriptionTextView);
         restaurantImage = findViewById(R.id.restaurant_image);
+        foodsRecyclerView = findViewById(R.id.foodsListRecyclerView);
+
         Picasso.get().load(RestaurantImages.restaurantImages[restaurantImagePosition]).fit().into(restaurantImage);
 
         nameTextView.setText(restaurantName);
         descriptionTextView.setText(restaurantDescription);
 
+        initFoodModelsList();
+
+        foodsRecyclerView.setAdapter(new F_RecyclerViewAdapter(this, foodModelsList));
+    }
+
+    public void initFoodModelsList() {
+        String[] foodNames = getResources().getStringArray(R.array.foods_names);
+        String[] foodDescriptions = getResources().getStringArray(R.array.foods_descriptions);
+
+        for(int i = 0; i < foodNames.length; i++ ) {
+            foodModelsList.add(new FoodModel(foodNames[i], foodDescriptions[i], foodImages[i]));
+        }
     }
 }

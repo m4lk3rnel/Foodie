@@ -1,29 +1,20 @@
 package com.example.foodie;
 
-import static android.widget.Toast.LENGTH_SHORT;
-
-import static androidx.core.content.ContextCompat.startActivity;
-
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.logging.Logger;
 
 
 public class R_RecyclerViewAdapter extends RecyclerView.Adapter<R_RecyclerViewAdapter.MyViewHolder> {
@@ -52,7 +43,7 @@ public class R_RecyclerViewAdapter extends RecyclerView.Adapter<R_RecyclerViewAd
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView restaurantNameTextView = view.findViewById(R.id.restaurantNameTextView);
+                TextView restaurantNameTextView = view.findViewById(R.id.foodNameTextView);
                 TextView descriptionTextView = view.findViewById(R.id.restaurantDescriptionTextView);
                 ImageView imageView = view.findViewById(R.id.restaurantImageView);
                 //Toast.makeText(context, String.format("Restaurant name: %s", restaurantNameTextView.getText()), LENGTH_SHORT).show();
@@ -102,7 +93,7 @@ public class R_RecyclerViewAdapter extends RecyclerView.Adapter<R_RecyclerViewAd
             super(itemView);
 
             restaurantImage = itemView.findViewById(R.id.restaurantImageView);
-            restaurantName = itemView.findViewById(R.id.restaurantNameTextView);
+            restaurantName = itemView.findViewById(R.id.foodNameTextView);
             restaurantDescription = itemView.findViewById(R.id.restaurantDescriptionTextView);
 
 
