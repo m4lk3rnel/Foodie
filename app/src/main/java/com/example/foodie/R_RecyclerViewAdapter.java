@@ -45,7 +45,6 @@ public class R_RecyclerViewAdapter extends RecyclerView.Adapter<R_RecyclerViewAd
             public void onClick(View v) {
                 TextView restaurantNameTextView = view.findViewById(R.id.foodNameTextView);
                 TextView descriptionTextView = view.findViewById(R.id.restaurantDescriptionTextView);
-                ImageView imageView = view.findViewById(R.id.restaurantImageView);
                 //Toast.makeText(context, String.format("Restaurant name: %s", restaurantNameTextView.getText()), LENGTH_SHORT).show();
 
                 Intent i = new Intent(v.getContext(), RestaurantActivity.class);
@@ -54,7 +53,10 @@ public class R_RecyclerViewAdapter extends RecyclerView.Adapter<R_RecyclerViewAd
 
                 RecyclerView myView = (RecyclerView) v.getParent();
                 int position = myView.getChildAdapterPosition(v);
+
+
                 i.putExtra("restaurant_image_id", position);
+
                 Log.d("Adapter", String.format("id of restaurant row: %d", position));
                 v.getContext().startActivity(i);
             }
@@ -69,7 +71,6 @@ public class R_RecyclerViewAdapter extends RecyclerView.Adapter<R_RecyclerViewAd
         //binding the data to the ViewHolder
         holder.restaurantName.setText(restaurantModels.get(position).getName());
         holder.restaurantDescription.setText(restaurantModels.get(position).getDescription());
-
 
         Picasso.get().load(restaurantModels.get(position).getImage()).fit().into(holder.restaurantImage);
 
