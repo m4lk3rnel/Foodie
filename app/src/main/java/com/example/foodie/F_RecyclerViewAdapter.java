@@ -37,6 +37,7 @@ public class F_RecyclerViewAdapter extends RecyclerView.Adapter<F_RecyclerViewAd
     public void onBindViewHolder(@NonNull F_RecyclerViewAdapter.MyViewHolder holder, int position) {
         holder.foodNameTextView.setText(foodModelsList.get(position).getName());
         holder.foodDescriptionTextView.setText(foodModelsList.get(position).getDescription());
+        holder.priceTextView.setText(foodModelsList.get(position).getPrice());
         //button
         Picasso.get().load(foodModelsList.get(position).getImage()).fit().into(holder.foodImageView);
     }
@@ -50,6 +51,7 @@ public class F_RecyclerViewAdapter extends RecyclerView.Adapter<F_RecyclerViewAd
 
         TextView foodNameTextView;
         TextView foodDescriptionTextView;
+        TextView priceTextView;
 
         ImageView foodImageView;
 
@@ -58,6 +60,7 @@ public class F_RecyclerViewAdapter extends RecyclerView.Adapter<F_RecyclerViewAd
 
             foodNameTextView = itemView.findViewById(R.id.foodNameTextView);
             foodDescriptionTextView = itemView.findViewById(R.id.foodDescriptionTextView);
+            priceTextView = itemView.findViewById(R.id.priceTextView);
 
             foodImageView = itemView.findViewById(R.id.foodImageView);
 

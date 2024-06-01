@@ -59,10 +59,11 @@ public class RestaurantActivity extends AppCompatActivity {
     public void initFoodModelsList() {
         String[] foodNames = getResources().getStringArray(R.array.foods_names);
         String[] foodDescriptions = getResources().getStringArray(R.array.foods_descriptions);
+        String[] prices = getResources().getStringArray(R.array.prices);
 
         for(int i = 0; i < foodNames.length; i++ ) {
             try {
-                foodModelsList.add(new FoodModel(foodNames[i], foodDescriptions[i], foodImages[i]));
+                foodModelsList.add(new FoodModel(foodNames[i], foodDescriptions[i], prices[i], foodImages[i]));
             } catch(Exception e) {
                 Log.e("Restaurant", e.getMessage());
             }

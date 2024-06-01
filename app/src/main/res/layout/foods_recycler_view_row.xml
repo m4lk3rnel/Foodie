@@ -40,10 +40,10 @@
                 android:id="@+id/foodNameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/roboto_condensed_regular"
-                android:text="Food name"
+                android:text="@string/food_name"
                 android:textColor="#A3A3A3"
                 android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/foodImageView"
@@ -53,14 +53,37 @@
                 android:id="@+id/foodDescriptionTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="12dp"
                 android:fontFamily="@font/roboto_light"
-                android:text="Food description"
+                android:text="@string/food_description"
                 android:textColor="#8E8E8E"
                 android:textSize="19sp"
                 app:layout_constraintStart_toEndOf="@+id/foodImageView"
                 app:layout_constraintTop_toBottomOf="@+id/foodNameTextView" />
+
+            <TextView
+                android:id="@+id/priceTextView"
+                android:layout_width="118dp"
+                android:layout_height="29dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/price"
+                android:textColor="#8E8E8E"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/foodImageView"
+                app:layout_constraintTop_toBottomOf="@+id/foodDescriptionTextView" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="57dp"
+                android:layout_height="52dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/plus_sign"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
