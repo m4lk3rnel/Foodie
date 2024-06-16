@@ -55,7 +55,7 @@ public class RestaurantActivity extends AppCompatActivity {
 
         initFoodModelsList();
 
-        foodsRecyclerView.setAdapter(new F_RecyclerViewAdapter(this, foodModelsList));
+        foodsRecyclerView.setAdapter(new F_RecyclerViewAdapter(this, foodModelsList, restaurantName));
         foodsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 

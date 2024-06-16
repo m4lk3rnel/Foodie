@@ -20,10 +20,12 @@ public class F_RecyclerViewAdapter extends RecyclerView.Adapter<F_RecyclerViewAd
 
     Context context;
     ArrayList<FoodModel> foodModelsList;
+    String restaurantName;
 
-    public F_RecyclerViewAdapter(Context context, ArrayList<FoodModel> foodModelsList) {
+    public F_RecyclerViewAdapter(Context context, ArrayList<FoodModel> foodModelsList, String restaurantName) {
         this.foodModelsList = foodModelsList;
         this.context = context;
+        this.restaurantName = restaurantName;
     }
 
     @NonNull
@@ -40,12 +42,18 @@ public class F_RecyclerViewAdapter extends RecyclerView.Adapter<F_RecyclerViewAd
         holder.foodNameTextView.setText(foodModelsList.get(position).getName());
         holder.foodDescriptionTextView.setText(foodModelsList.get(position).getDescription());
         holder.priceTextView.setText(foodModelsList.get(position).getPrice());
+
         //button
         holder.addToCartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String foodName = String.valueOf(holder.foodNameTextView.getText());
-                Cart.addItem(foodName);
+                String restName = restaurantName;
+                String price = String.valueOf(holder.priceTextView.getText());
+                String item = foodName + " (" + restName + ") - " + price;
+                Cart.addItem(item);
+                //TODO: calculate the order price in addItem()
+                //TODO: add "order" button
                 Log.i("CartActivity", String.format("%s added to cart.", foodName));
             }
         });
