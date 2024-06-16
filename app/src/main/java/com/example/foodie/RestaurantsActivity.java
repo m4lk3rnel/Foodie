@@ -7,8 +7,11 @@ import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -21,7 +24,7 @@ public class RestaurantsActivity extends AppCompatActivity {
     ArrayList<RestaurantModel> filteredRestaurantModels = new ArrayList<>();
     SearchView searchView;
     RecyclerView restRecyclerView;
-
+    Button cartButton;
     public R_RecyclerViewAdapter recViewAdapter;
 
     @Override
@@ -33,7 +36,9 @@ public class RestaurantsActivity extends AppCompatActivity {
         String username = getIntent().getStringExtra("username");
         welcomeTextView = findViewById(R.id.welcomeText);
         welcomeTextView.setText(String.format("Welcome, %s", username));
+        cartButton = findViewById(R.id.cartButton);
 
+        cartButton.setOnClickListener(new cartClickListener());
         searchView = findViewById(R.id.restaurantSearchView);
         restRecyclerView = findViewById(R.id.restRecyclerView);
 
@@ -61,6 +66,15 @@ public class RestaurantsActivity extends AppCompatActivity {
             }
         });
     }
+
+    static class cartClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            Intent i = new Intent(v.getContext(), CartActivity.class);
+            v.getContext().startActivity(i);
+        }
+    }
+
     private void setUpRestaurantModels() {
         String[] restaurantNames = getResources().getStringArray(R.array.restaurants_names);
         String[] descriptions = getResources().getStringArray(R.array.restaurants_descriptions);

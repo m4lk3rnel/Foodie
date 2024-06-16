@@ -35,9 +35,26 @@
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/restaurantSearchView"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
+
+    <Button
+        android:id="@+id/cartButton"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/restRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/restaurantSearchView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        android:text="@string/cart"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

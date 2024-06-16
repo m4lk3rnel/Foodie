@@ -22,6 +22,7 @@
     <string name="food_description">Food description</string>
     <string name="price">Price</string>
     <string name="plus_sign">+</string>
+    <string name="cart">Cart</string>
 
     <string-array name="restaurants_names">
         <item>Sunshine Diner</item>

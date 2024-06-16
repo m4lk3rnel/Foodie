@@ -1,9 +1,11 @@
 package com.example.foodie;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -39,6 +41,14 @@ public class F_RecyclerViewAdapter extends RecyclerView.Adapter<F_RecyclerViewAd
         holder.foodDescriptionTextView.setText(foodModelsList.get(position).getDescription());
         holder.priceTextView.setText(foodModelsList.get(position).getPrice());
         //button
+        holder.addToCartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String foodName = String.valueOf(holder.foodNameTextView.getText());
+                Cart.addItem(foodName);
+                Log.i("CartActivity", String.format("%s added to cart.", foodName));
+            }
+        });
         Picasso.get().load(foodModelsList.get(position).getImage()).fit().into(holder.foodImageView);
     }
 
@@ -54,6 +64,7 @@ public class F_RecyclerViewAdapter extends RecyclerView.Adapter<F_RecyclerViewAd
         TextView priceTextView;
 
         ImageView foodImageView;
+        Button addToCartButton;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -63,7 +74,7 @@ public class F_RecyclerViewAdapter extends RecyclerView.Adapter<F_RecyclerViewAd
             priceTextView = itemView.findViewById(R.id.priceTextView);
 
             foodImageView = itemView.findViewById(R.id.foodImageView);
-
+            addToCartButton = itemView.findViewById(R.id.addToCartButton);
         }
     }
 }
