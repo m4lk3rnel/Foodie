@@ -23,6 +23,9 @@
     <string name="price">Price</string>
     <string name="plus_sign">+</string>
     <string name="cart">Cart</string>
+    <string name="Cart">Cart</string>
+    <string name="order">Order</string>
+    <string name="total">Total:</string>
 
     <string-array name="restaurants_names">
         <item>Sunshine Diner</item>
@@ -83,10 +86,10 @@
     </string-array>
 
     <string-array name="prices">
-        <item>20.99$</item>
-        <item>30.99$</item>
-        <item>17.99$</item>
-        <item>13.99$</item>
-        <item>20.99$</item>
+        <item>20.99</item>
+        <item>30.99</item>
+        <item>17.99</item>
+        <item>13.99</item>
+        <item>20.99</item>
     </string-array>
 </resources>

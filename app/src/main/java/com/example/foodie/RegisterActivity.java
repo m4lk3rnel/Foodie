@@ -108,8 +108,6 @@ public class RegisterActivity extends AppCompatActivity {
             System.out.println("Password: " + password);
             System.out.println("url" + url);
 
-
-
         });
         alreadyAccText.setOnClickListener(v -> {
             Intent i = new Intent(v.getContext(), LoginActivity.class);

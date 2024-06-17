@@ -50,11 +50,11 @@ public class F_RecyclerViewAdapter extends RecyclerView.Adapter<F_RecyclerViewAd
                 String foodName = String.valueOf(holder.foodNameTextView.getText());
                 String restName = restaurantName;
                 String price = String.valueOf(holder.priceTextView.getText());
-                String item = foodName + " (" + restName + ") - " + price;
-                Cart.addItem(item);
-                //TODO: calculate the order price in addItem()
+                String item = foodName + " (" + restName + ") - " + price + "$";
+                Log.i("CartActivity", String.format("%s (%s) - price: %s", foodName, restaurantName, price));
+
+                Cart.addItem(item, Float.parseFloat(price));
                 //TODO: add "order" button
-                Log.i("CartActivity", String.format("%s added to cart.", foodName));
             }
         });
         Picasso.get().load(foodModelsList.get(position).getImage()).fit().into(holder.foodImageView);
